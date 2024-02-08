@@ -21,7 +21,6 @@ import { RouterLink, RouterView } from 'vue-router'
       position: sticky;
       height: 100%;
       width: 100%;
-      background-image: linear-gradient(black, aquamarine);
       margin: 0%;
     }
     img{
@@ -37,13 +36,13 @@ import { RouterLink, RouterView } from 'vue-router'
     .NavLink, .RouterLink {
       text-decoration: none;
       display: inline;
-      color: #ffffff;
+      color: #000000;
       list-style-type: none;
       font-size: 5vh;
       font-family: monospace;
       margin: 1em;
     }
     li :hover {
-      color: aquamarine;
+      color: rgb(76, 85, 82);
     }
 </style>

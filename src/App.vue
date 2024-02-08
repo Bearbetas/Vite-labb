@@ -1,6 +1,7 @@
 <script setup>
 //Importera navbar
 import NavBar from './components/NavBar.vue'
+import SearchBar from './components/SearchBar.vue'
 </script>
 
 <template>
@@ -8,8 +9,8 @@ import NavBar from './components/NavBar.vue'
     <!-- Lägg in navbar komponent -->
     <NavBar />
   </header>
+  <SearchBar />
 
-  <RouterView />
 </template>
 
 <style scoped>
