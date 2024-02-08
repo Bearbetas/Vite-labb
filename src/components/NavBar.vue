@@ -1,0 +1,49 @@
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+
+<template>
+  <header>
+  <nav class = "NavBar">
+      <img  class="logo" src="../assets/img/pokelogo.png" alt="pokelogo">
+      <ul class="NavList">
+        <li class="NavLink"><RouterLink class = "RouterLink" to="/Faves">Faves</RouterLink></li>
+        <li class="NavLink"><RouterLink class = "RouterLink" to="/About">About</RouterLink></li>
+      </ul>
+    </nav>
+  </header>
+
+  <RouterView />
+</template>
+
+<style>
+  nav {
+      position: sticky;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(black, aquamarine);
+      margin: 0%;
+    }
+    img{
+      max-width: 50%;
+      height: auto;
+      }
+    .NavList {
+      position: absolute;
+      top: 0;
+      right: 5vw;
+    }
+
+    .NavLink, .RouterLink {
+      text-decoration: none;
+      display: inline;
+      color: #ffffff;
+      list-style-type: none;
+      font-size: 5vh;
+      font-family: monospace;
+      margin: 1em;
+    }
+    li :hover {
+      color: aquamarine;
+    }
+</style>
