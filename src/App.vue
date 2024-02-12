@@ -2,6 +2,7 @@
 //Importera navbar
 import NavBar from './components/NavBar.vue'
 import SearchBar from './components/SearchBar.vue'
+import PokeList from './components/PokeList.vue';
 </script>
 
 <template>
@@ -10,6 +11,8 @@ import SearchBar from './components/SearchBar.vue'
     <NavBar />
   </header>
   <SearchBar />
+
+  <PokeList />
 
 </template>
 

@@ -1,18 +1,5 @@
 <script>
-export default {
-  data() {
-    return {
-      pokemon: null
-    }
-  },
-    created() {
-      fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
-        .then((response) => response.json())
-        .then((result) => {
-          this.pokemon = result
-        })
-      },
-    }
+
 
 </script>
 
@@ -29,19 +16,10 @@ export default {
       </div>
     </div>
 
-    <div id="PokeSum">
-      <div>
-    <ul class="PokeList" v-if="pokemon !==null">
-      <li  v-for="poke in pokemon.results" :key="poke.name">
-        {{ poke.name }}
-      </li>
-    </ul>
-    <div v-else>Loading...</div>
-  </div>
-    </div>
+
 </template>
 
-<style>
+<style scoped>
 
 h2 {
 
@@ -93,15 +71,4 @@ margin: 2vh;
   font-size: 25px;
 }
 
-#PokeSum {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin:5vh;
-  background-color: aliceblue;
-
-}
-.Pokelist {
-  list-style-type: none;
-}
 </style>
