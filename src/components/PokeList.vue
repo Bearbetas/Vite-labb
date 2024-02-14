@@ -12,7 +12,12 @@ export default {
           this.pokemon = result
         })
       },
+      methods: {
+        onclick(poke) {
+      this.$router.push({ name: 'pokemon-site', params: {pokemon:poke.name } })
+      },
     }
+}
 </script>
 
 <template>
@@ -20,7 +25,7 @@ export default {
       <div>
         <h2> Pick from list</h2>
     <ul class="PokeList" v-if="pokemon !==null">
-      <li  v-for="poke in pokemon.results" :key="poke.name">
+      <li  v-for="poke in pokemon.results" :key="poke.name" @click="onclick(poke.name)">
         {{ poke.name }}
       </li>
     </ul>

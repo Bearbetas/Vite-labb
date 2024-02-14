@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <img  class="logo" src="../assets/img/pokelogo.png" alt="pokelogo">
       <ul class="NavList">
         <li class="NavLink"><RouterLink class = "RouterLink" to="/Faves">Faves</RouterLink></li>
-        <li class="NavLink"><RouterLink class = "RouterLink" to="/About">About</RouterLink></li>
+        <li class="NavLink"><RouterLink class = "RouterLink" to="/List">List</RouterLink></li>
       </ul>
     </nav>
   </header>

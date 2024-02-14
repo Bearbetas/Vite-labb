@@ -1,6 +1,23 @@
 <script>
 
-
+export default {
+  data() {
+    return {
+      PokemonName: '',
+      pokemon: null,
+    }
+    },
+  methods: {
+    async fetchData() {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.PokemonName}`);
+  const result = await response.json();
+  this.pokemon = result;
+  },
+  onClick() {
+    this.fetchData();
+  },
+}
+}
 </script>
 
 
@@ -9,10 +26,15 @@
       <div id="searchbox">
         <h2>Who's that Pokémon?</h2>
         <div class="SearchHere">
-          <input id="title" placeholder="Enter Pokémon" />
-          <input id="search" type="button" value="Search" />
+          <input id="title" v-model= "PokemonName" placeholder="Enter Pokémon" />
+          <input id="search" @click="onClick" type="button" value="Search" />
+          <div id="answer" v-if="pokemon">It's {{pokemon.name}}! 
+            Number Id:{{ pokemon.id }} 
+            Height:{{ pokemon.height }}0 cm 
+            Weight: {{ pokemon.weight }} hecto
+
+            {{ pokemon.sprites.front_default }}</div>
         </div>
-        <p id="searchResults"></p>
       </div>
     </div>
 
