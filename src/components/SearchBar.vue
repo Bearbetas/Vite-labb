@@ -9,10 +9,15 @@ export default {
     },
   methods: {
     async fetchData() {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.PokemonName}`);
-  const result = await response.json();
-  this.pokemon = result;
-  },
+      try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.PokemonName.toLowerCase()}`);
+        const result = await response.json();
+        this.pokemon = result;
+        this.image = result.sprites.front_default; // Add this line to set the image URL
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
   onClick() {
     this.fetchData();
   },
@@ -27,13 +32,16 @@ export default {
         <h2>Who's that Pokémon?</h2>
         <div class="SearchHere">
           <input id="title" v-model= "PokemonName" placeholder="Enter Pokémon" />
-          <input id="search" @click="onClick" type="button" value="Search" />
-          <div id="answer" v-if="pokemon">It's {{pokemon.name}}! 
-            Number Id:{{ pokemon.id }} 
-            Height:{{ pokemon.height }}0 cm 
-            Weight: {{ pokemon.weight }} hecto
-
-            {{ pokemon.sprites.front_default }}</div>
+          <input id="search" @click="onClick" type="button" value="Search" /> 
+          <div id="answer" v-if="pokemon"><h3>It's {{pokemon.name}}!</h3>
+            <ul>
+            <!-- <li> {{pokemon.type.name}} </li>   funkar ej?? --> 
+            <li>Height: {{ pokemon.height }}0 cm </li>
+            <li>Weight: {{ pokemon.weight }} Hecto</li>
+            <li>Index number: {{ pokemon.id }} </li>
+          </ul>
+          <img id="Sprite" :src="pokemon.sprites.front_default" alt="Pokemon Image" />
+          </div> 
         </div>
       </div>
     </div>
@@ -56,6 +64,7 @@ h2 {
   align-items: center;
   margin-right:20vh;
   margin-left: 20vh;
+  padding: 2vh;
   background-color:azure;
   border-radius: 7px;
   border-color: black;
@@ -88,7 +97,7 @@ margin: 2vh;
   border: 1px solid grey;
 }
 
-#searchResults {
+#answer {
   margin-top: 3%;
   font-size: 25px;
 }

@@ -1,6 +1,5 @@
 <script setup>
-import NavBar from '@/components/NavBar.vue';
-import PokeList from '@/components/PokeList.vue';
+
 </script>
 
 <template>
@@ -8,8 +7,4 @@ import PokeList from '@/components/PokeList.vue';
       <!-- Lägg in navbar komponent -->
       <NavBar />
     </header>
-    <PokeList />
-  
-  
-  
   </template>
