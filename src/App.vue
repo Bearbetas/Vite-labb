@@ -2,6 +2,7 @@
 //Importera navbar
 import NavBar from './components/NavBar.vue'
 import SearchBar from './components/SearchBar.vue'
+import SiteFooter from './components/SiteFooter.vue';
 
 </script>
 
@@ -12,11 +13,12 @@ import SearchBar from './components/SearchBar.vue'
   </header>
   <SearchBar />
 
-
+<SiteFooter />
 
 </template>
 
 <style scoped>
+
 
 
 </style>

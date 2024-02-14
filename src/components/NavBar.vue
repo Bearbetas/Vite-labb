@@ -28,9 +28,10 @@ import { RouterLink, RouterView } from 'vue-router'
       height: auto;
       }
     .NavList {
+      margin: auto;
       position: absolute;
       top: 0;
-      right: 5vw;
+      right: 5%;
     }
 
     .NavLink, .RouterLink {

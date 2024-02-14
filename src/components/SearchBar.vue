@@ -28,19 +28,20 @@ export default {
 
 <template>
       <div id="SearchBar">
-      <div id="searchbox">
-        <h2>Who's that Pokémon?</h2>
+      <div>
+        <h1>Who's that Pokémon?</h1>
         <div class="SearchHere">
           <input id="title" v-model= "PokemonName" placeholder="Enter Pokémon" />
           <input id="search" @click="onClick" type="button" value="Search" /> 
-          <div id="answer" v-if="pokemon"><h3>It's {{pokemon.name}}!</h3>
-            <ul>
+          <div id= "answerbox" v-if="pokemon"><h2>It's {{pokemon.name}}!</h2>
+            <img id="Sprite" :src="pokemon.sprites.front_default" alt="Pokemon Image" />
+            <ul id="answer">
             <!-- <li> {{pokemon.type.name}} </li>   funkar ej?? --> 
             <li>Height: {{ pokemon.height }}0 cm </li>
             <li>Weight: {{ pokemon.weight }} Hecto</li>
             <li>Index number: {{ pokemon.id }} </li>
           </ul>
-          <img id="Sprite" :src="pokemon.sprites.front_default" alt="Pokemon Image" />
+          
           </div> 
         </div>
       </div>
@@ -51,9 +52,12 @@ export default {
 
 <style scoped>
 
-h2 {
-
-  margin-bottom: 2vh;
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 5%; /*margin left/right 10% i media query */
   font-family: 'Oswald', sans-serif;
   font-size: 5vh;
 
@@ -62,44 +66,79 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right:20vh;
-  margin-left: 20vh;
+  margin-right:20%;
+  margin-left: 20%;
+  margin-bottom: 10%;
   padding: 2vh;
-  background-color:azure;
+  background-color:antiquewhite;
   border-radius: 7px;
   border-color: black;
   border-style: double;
   border-width: 1vh;
+
 
 }
 .SearchHere {
   display: flex;
   flex-direction: column;
   max-width: 350px;
-margin: auto;
+  margin: auto;
+
 }
 
 #search {
-margin: 2vh;
+margin-left: 30%;
+margin-right: 30%;
+margin-top:5%;
+margin-bottom: 5%;
   padding: 10px;
   background-color:black;
   border-radius: 20px;
   color: white;
-  font-size: 17px;
+  font-size:100%;
+  box-shadow: 10px 5px 5px #beb38b;
   cursor: pointer;
 }
-
+#search:hover { box-shadow: 5px; /*funkar ej, varför? */
+}
 #title {
+  margin-left: 10%;
+  margin-right: 10%;
   padding: 10px;
   font-size: 17px;
   border-radius: 20px;
   color: rgb(8, 8, 8);
   border: 1px solid grey;
 }
+h2 {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 2vh;
+font-family: 'Oswald', sans-serif;
+font-size: 4vh;
+}
 
+
+#answerbox {
+  background-color: white;
+  margin: auto;
+  padding: 10%;
+  border-radius: 5px;
+  box-shadow: 10px 5px 5px #beb38b;
+
+}
 #answer {
   margin-top: 3%;
   font-size: 25px;
+  list-style:circle;
 }
-
+#Sprite {
+  margin: auto;
+  height: 200%;
+  width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
