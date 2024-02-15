@@ -46,4 +46,8 @@ import { RouterLink, RouterView } from 'vue-router'
     li :hover {
       color: rgb(76, 85, 82);
     }
+
+    .logo {
+      margin-bottom: 5%;
+    }
 </style>
