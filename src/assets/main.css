@@ -6,4 +6,19 @@ body{
   background-image: url("img/pokemonbackground2.jpeg");
   background-repeat: no-repeat;
   background-size:cover;
+  
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows:
+    1fr
+    1fr
+    1fr;
+    grid-template-areas: 
+    'nav'
+    'main'
+    'footer';
 }

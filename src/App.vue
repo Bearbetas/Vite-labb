@@ -7,6 +7,7 @@ import SiteFooter from './components/SiteFooter.vue';
 </script>
 
 <template>
+  <body class="grid">
   <header>
     <!-- Lägg in navbar komponent -->
     <NavBar />
@@ -16,7 +17,7 @@ import SiteFooter from './components/SiteFooter.vue';
  </main>
 
 <SiteFooter />
-
+</body>
 </template>
 
 <style scoped>
