@@ -1,7 +1,7 @@
 <script setup>
 //Importera navbar
 import NavBar from './components/NavBar.vue'
-import SearchBar from './components/SearchBar.vue'
+
 import SiteFooter from './components/SiteFooter.vue';
 
 </script>
@@ -11,7 +11,9 @@ import SiteFooter from './components/SiteFooter.vue';
     <!-- Lägg in navbar komponent -->
     <NavBar />
   </header>
-  <SearchBar />
+ <main>
+  
+ </main>
 
 <SiteFooter />
 
