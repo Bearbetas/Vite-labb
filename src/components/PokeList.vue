@@ -5,30 +5,34 @@ export default {
       pokemon: null
     }
   },
-    created() {
+    methods: {
+      fetchData() {
       fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151')
         .then((response) => response.json())
         .then((result) => {
-          this.pokemon = result
+          this.pokemon = result;
         })
-      },
-      methods: {
-        onclick(poke) {
-      this.$router.push({ name: 'pokemon-site', params: {pokemon:poke.name } })
-      },
-    }
-}
+      }
+        },
+        created() {
+          this.fetchData();
+        }
+      }
+
 </script>
 
 <template>
-        <div id="PokeSum">
+      <div id="PokeSum">
       <div>
-        <h2> Pick from list</h2>
-    <ul class="PokeList" v-if="pokemon !==null">
-      <li  v-for="poke in pokemon.results" :key="poke.name" @click="onclick(poke.name)">
-        {{ poke.name }}
-      </li>
-    </ul>
+        <h2> Pokémon List</h2>
+    <div class="PokeList" v-if="pokemon !==null">
+      <ul  v-for="pokemon in pokemon.results" :key="pokemon" >
+      <li>{{ pokemon.name }}</li> 
+      <li>Height: {{ pokemon.height }}0 cm </li>
+      <li>Weight: {{ pokemon.weight }} Hecto</li>
+      <li>Indexnumber: {{ pokemon.id }}</li> 
+      </ul>
+    </div>
     <div v-else>Loading...</div>
   </div>
     </div>
@@ -62,5 +66,18 @@ li {
   padding: 2vh;
   font-size: 1,5em;
 
+}
+#answer {
+  margin-top: 3%;
+  font-size: 25px;
+  list-style:circle;
+}
+#Sprite {
+  margin: auto;
+  height: 200%;
+  width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

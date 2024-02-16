@@ -35,14 +35,17 @@ export default {
           <input id="search" @click="onClick" type="button" value="Search" /> 
           <div id= "answerbox" v-if="pokemon"><h2>It's {{pokemon.name}}!</h2>
             <img id="Sprite" :src="pokemon.sprites.front_default" alt="Pokemon Image" />
-            <ul id="answer">
-            <!-- <li> {{pokemon.type.name}} </li>   funkar ej?? --> 
+            <!--stoppa in en v-else här-->
+            <ul id="answer">  
             <li>Height: {{ pokemon.height }}0 cm </li>
             <li>Weight: {{ pokemon.weight }} Hecto</li>
             <li>Index number: {{ pokemon.id }} </li>
           </ul>
-          
           </div> 
+          <div class="SearchHere" v-else>
+          <p>Dont know what you're looking for?</p>
+          <p>Check out our <RouterLink class = "RouterLink" to="/list">List!</RouterLink></p>
+        </div>
         </div>
       </div>
     </div>
@@ -81,6 +84,8 @@ h1 {
 .SearchHere {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 350px;
   margin: auto;
 
@@ -99,8 +104,7 @@ margin-bottom: 5%;
   box-shadow: 10px 5px 5px #beb38b;
   cursor: pointer;
 }
-#search:hover { box-shadow: 5px; /*funkar ej, varför? */
-}
+
 #title {
   margin-left: 10%;
   margin-right: 10%;
@@ -119,7 +123,19 @@ font-family: 'Oswald', sans-serif;
 font-size: 4vh;
 }
 
-
+p {
+  font-family: sans-serif;
+  font-size: 2vh;
+  margin: 0%;
+}
+.RouterLink {
+  font-size: 2vh;
+  font-family: sans-serif;
+  margin:0% ;
+}
+.RouterLink:hover {
+  text-decoration: underline;
+}
 #answerbox {
   background-color: white;
   margin: auto;
