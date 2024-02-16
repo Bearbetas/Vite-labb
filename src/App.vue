@@ -8,10 +8,10 @@ import SiteFooter from './components/SiteFooter.vue';
 
 <template>
   <body class="grid">
-  <header>
+
     <!-- Lägg in navbar komponent -->
     <NavBar />
-  </header>
+ 
  <main>
   
  </main>

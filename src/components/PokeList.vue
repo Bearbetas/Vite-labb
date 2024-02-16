@@ -11,6 +11,7 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           this.pokemon = result;
+          console.log(this.pokemon)
         })
       }
         },
@@ -18,6 +19,7 @@ export default {
           this.fetchData();
         }
       }
+      
 
 </script>
 
@@ -27,10 +29,10 @@ export default {
         <h2> Pokémon List</h2>
     <div class="PokeList" v-if="pokemon !==null">
       <ul  v-for="pokemon in pokemon.results" :key="pokemon" >
-      <li>{{ pokemon.name }}</li> 
-      <li>Height: {{ pokemon.height }}0 cm </li>
-      <li>Weight: {{ pokemon.weight }} Hecto</li>
-      <li>Indexnumber: {{ pokemon.id }}</li> 
+      <li class="Name">{{ pokemon.name }}</li> 
+      <li class="info">Height: {{ pokemon.height }}0 cm </li>
+      <li class="info">Weight: {{ pokemon.weight }} Hecto</li>
+      <li class="info">Indexnumber: {{ pokemon.id }}</li> 
       </ul>
     </div>
     <div v-else>Loading...</div>
@@ -46,18 +48,20 @@ h2 {
     
 }
 #PokeSum {
-  display: flex;  justify-content: center;
+  display: flex;  
+  justify-content: center;
   align-items: center;
-  margin:20vh;
+  margin:10vh;
   background-color: aliceblue;
   border-radius: 7px;
   border-color: black;
   border-style: double;
   border-width: 1vh;
   list-style-type: none;
-  
- 
-
+}
+.Name {
+  font-size: 3vh;
+  text-decoration: underline;
 }
 li {
   display: inline-block;
@@ -79,5 +83,16 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media  (max-width: 375px) {
+  h2 {
+font-size: 3vh;
+
+  }
+  #PokeSum {
+   margin-left: 5%;
+   margin-right: 5%;
+  }
 }
 </style>

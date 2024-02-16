@@ -48,6 +48,6 @@ import { RouterLink, RouterView } from 'vue-router'
     }
 
     .logo {
-      margin-bottom: 5%;
+      margin-bottom: 0%;
     }
 </style>

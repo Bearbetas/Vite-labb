@@ -28,18 +28,20 @@ export default {
 
 <template>
       <div id="SearchBar">
-      <div>
+      <div id="textbar">
         <h1>Who's that Pokémon?</h1>
         <div class="SearchHere">
           <input id="title" v-model= "PokemonName" placeholder="Enter Pokémon" />
           <input id="search" @click="onClick" type="button" value="Search" /> 
           <div id= "answerbox" v-if="pokemon"><h2>It's {{pokemon.name}}!</h2>
             <img id="Sprite" :src="pokemon.sprites.front_default" alt="Pokemon Image" />
-            <!--stoppa in en v-else här-->
+            <p class="info"> "{{ pokemon.name }}" </p>
             <ul id="answer">  
+              <li>Index number: {{ pokemon.id }} </li>
+            <li>Type: {{ pokemon.types[0].type.name }}</li>
             <li>Height: {{ pokemon.height }}0 cm </li>
             <li>Weight: {{ pokemon.weight }} Hecto</li>
-            <li>Index number: {{ pokemon.id }} </li>
+            
           </ul>
           </div> 
           <div class="SearchHere" v-else>
@@ -60,7 +62,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-bottom: 5%; /*margin left/right 10% i media query */
+  margin-bottom: 5%; 
   font-family: 'Oswald', sans-serif;
   font-size: 5vh;
 
@@ -73,6 +75,7 @@ h1 {
   margin-left: 20%;
   margin-bottom: 10%;
   padding: 2vh;
+  padding-bottom: 5%;
   background-color:antiquewhite;
   border-radius: 7px;
   border-color: black;
@@ -128,6 +131,10 @@ p {
   font-size: 2vh;
   margin: 0%;
 }
+.info {
+  text-align: center;
+  font-size: 3vh;
+}
 .RouterLink {
   font-size: 2vh;
   font-family: sans-serif;
@@ -146,7 +153,7 @@ p {
 }
 #answer {
   margin-top: 3%;
-  font-size: 25px;
+  font-size: 3vh;
   list-style:circle;
 }
 #Sprite {
@@ -156,5 +163,20 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media  (max-width: 375px) {
+  h1 {
+font-size: 3vh;
+
+  }
+  #SearchBar {
+   margin-left: 5%;
+   margin-right: 2vh;
+  }
+
+  #answer {
+    font-size: 2vh;
+  }
 }
 </style>
