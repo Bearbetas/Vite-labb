@@ -31,6 +31,7 @@ export default {
       <div id="textbar">
         <h1>Who's that Pokémon?</h1>
         <div class="SearchHere">
+          <p>Please enter a name or a number:</p>
           <input id="title" v-model= "PokemonName" placeholder="Enter Pokémon" />
           <input id="search" @click="onClick" type="button" value="Search" /> 
           <div id= "answerbox" v-if="pokemon"><h2>It's {{pokemon.name}}!</h2>
