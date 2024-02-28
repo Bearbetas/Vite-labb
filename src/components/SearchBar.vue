@@ -33,21 +33,21 @@ export default {
         <div class="SearchHere">
           <p>Please enter a name or a number:</p>
           <input id="title" v-model= "PokemonName" placeholder="Enter Pokémon" />
-          <input id="search" @click="onClick" type="button" value="Search" /> 
+          <input id="search" @click="onClick" type="button" value="Search" />
           <div id= "answerbox" v-if="pokemon"><h2>It's {{pokemon.name}}!</h2>
             <img id="Sprite" :src="pokemon.sprites.front_default" alt="Pokemon Image" />
             <p class="info"> "{{ pokemon.name }}" </p>
-            <ul id="answer">  
+            <ul id="answer">
               <li>Index number: {{ pokemon.id }} </li>
             <li>Type: {{ pokemon.types[0].type.name }}</li>
             <li>Height: {{ pokemon.height }}0 cm </li>
             <li>Weight: {{ pokemon.weight }} Hecto</li>
-            
+
           </ul>
-          </div> 
+          </div>
           <div class="SearchHere" v-else>
           <p>Dont know what you're looking for?</p>
-          <p>Check out our <RouterLink class = "RouterLink" to="/list">List!</RouterLink></p>
+          <p>Check out our <RouterLink class = "linkList" to="/list">List!</RouterLink></p>
         </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-bottom: 5%; 
+  margin-bottom: 5%;
   font-family: 'Oswald', sans-serif;
   font-size: 5vh;
 
@@ -143,6 +143,13 @@ p {
 }
 .RouterLink:hover {
   text-decoration: underline;
+}
+.linkList {
+  font-size: 2vh;
+  font-family: sans-serif;
+  color:black;
+  list-style-type: none;
+  margin:0% ;
 }
 #answerbox {
   background-color: white;

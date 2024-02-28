@@ -5,6 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
   <nav class = "NavBar">
+
       <img  class="logo" src="../assets/img/pokelogo.png" alt="pokelogo">
       <ul class="NavList">
         <li class="NavLink"><RouterLink class = "RouterLink" to="/">Home</RouterLink></li>
@@ -17,7 +18,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
+
   nav {
+    background: linear-gradient(180deg, #000000 50%, rgba(0,212,255,0) 50%);
       position: sticky;
       height: 100%;
       width: 100%;
@@ -28,6 +31,7 @@ import { RouterLink, RouterView } from 'vue-router'
       height: auto;
       }
     .NavList {
+      color: antiquewhite;
       margin: auto;
       position: absolute;
       top: 0;
@@ -37,17 +41,25 @@ import { RouterLink, RouterView } from 'vue-router'
     .NavLink, .RouterLink {
       text-decoration: none;
       display: inline;
-      color: #000000;
+      color:antiquewhite;
       list-style-type: none;
-      font-size: 5vh;
-      font-family: monospace;
-      margin: 1em;
+      font-size: 7vh;
+      font-family:fantasy;
+      margin: 1vh;
     }
     li :hover {
-      color: rgb(76, 85, 82);
+      color: rgb(239, 184, 55);
+      text-decoration:underline;
     }
 
     .logo {
       margin-bottom: 0%;
     }
+
+  @media  (max-width: 375px) {
+
+.RouterLink {
+  font-size: 3vh;
+}
+  }
 </style>
